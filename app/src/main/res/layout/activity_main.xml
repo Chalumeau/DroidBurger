@@ -1,4 +1,4 @@
-<<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
@@ -7,34 +7,138 @@ android:layout_height="match_parent"
 android:backgroundTint="#FFFFFF"
 tools:context=".MainActivity">
 
-<ImageView
-    android:id="@+id/imageView5"
-    android:layout_width="450dp"
-    android:layout_height="350dp"
-    android:layout_marginBottom="231dp"
-    android:visibility="visible"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0"
-    app:srcCompat="@drawable/mousstache" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="321dp"
+        android:layout_height="221dp"
+        android:layout_marginBottom="231dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/mousstache" />
 
-<TextView
-    android:id="@+id/starters"
-    android:layout_width="401dp"
-    android:layout_height="0dp"
-    android:layout_marginBottom="280dp"
-    android:text="@string/home_starters"
-    android:textAlignment="center"
-    android:textColor="#514D4D"
-    android:textSize="24sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:text="Phone Number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintVertical_bias="0.108" />
 
-<
+    <EditText
+        android:id="@+id/editTextTextPostalAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:minHeight="48dp"
+        android:text="Postal Adress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.113" />
+
+
+    <Button
+        android:id="@+id/ValiderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="ButtonStyle" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="First name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.797" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Last name"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintVertical_bias="0.295">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="5dp"
+            android:text="Burger : " />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/pickTimeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Time" />
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
