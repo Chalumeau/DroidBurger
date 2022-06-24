@@ -43,34 +43,34 @@ internal class AndroidSpinnerExampleActivity : Activity(),
                 true
             ).show()
         }
-        // Récupération des réponses
-        val nbrecup1 = findViewById<View>(R.id.editTextPhone) as EditText
-        val nbrecup2 = findViewById<View>(R.id.editTextTextPostalAddress) as EditText
-        val nbrecup3 = findViewById<View>(R.id.editTextTextPersonName) as EditText
-
-        val nbrecup4 = findViewById<View>(R.id.editTextTextPersonName2) as EditText
-        val nbrecup5 = findViewById<View>(R.id.spinner) as Spinner
-        val nbrecup6 = findViewById<View>(R.id.pickTimeBtn) as Button
-
-
-        val recup1: String
-        val recup2: String
-        val recup3: String
-        val recup4: String
-        val recup5: String
-        val recup6: String
-
-        recup1 = nbrecup1.text.toString()
-        recup2 = nbrecup2.text.toString()
-        recup3 = nbrecup3.text.toString()
-        recup4 = nbrecup4.text.toString()
-        // recup5 = nbrecup5.text.toString()
-        recup6 = nbrecup6.text.toString()
-
-        if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("") || recup6.matches("")) {
-            Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show()
-            return
-        }
+//        // Récupération des réponses
+//        val nbrecup1 = findViewById<View>(R.id.editTextPhone) as EditText
+//        val nbrecup2 = findViewById<View>(R.id.editTextTextPostalAddress) as EditText
+//        val nbrecup3 = findViewById<View>(R.id.editTextTextPersonName) as EditText
+//
+//        val nbrecup4 = findViewById<View>(R.id.editTextTextPersonName2) as EditText
+//        //val nbrecup5 = findViewById<View>(R.id.spinner) as Spinner
+//        val nbrecup6 = findViewById<View>(R.id.pickTimeBtn) as Button
+//
+//
+//        val recup1: String
+//        val recup2: String
+//        val recup3: String
+//        val recup4: String
+//        //val recup5: String
+//        val recup6: String
+//
+//        recup1 = nbrecup1.text.toString()
+//        recup2 = nbrecup2.text.toString()
+//        recup3 = nbrecup3.text.toString()
+//        recup4 = nbrecup4.text.toString()
+//        // recup5 = nbrecup5.text.toString()
+//        recup6 = nbrecup6.text.toString()
+//
+//        if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("") || recup6.matches("")) {
+//            Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show()
+//            return
+//        }
 
         // Spinner element
         val spinner = findViewById<View>(R.id.spinner) as Spinner
