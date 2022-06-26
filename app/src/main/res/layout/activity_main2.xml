@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:backgroundTint="#FFFFFF"
-tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -22,29 +22,29 @@ tools:context=".MainActivity">
         app:srcCompat="@drawable/mousstache" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/PhoneET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="phone"
         android:minHeight="48dp"
-        android:text="Phone Number"
+        android:hint="Phone number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintTop_toBottomOf="@+id/PostalAdressET"
         app:layout_constraintVertical_bias="0.108" />
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/PostalAdressET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
-        android:text="Postal Adress"
+        android:hint="Postal adress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
@@ -69,14 +69,14 @@ tools:context=".MainActivity">
         tools:ignore="ButtonStyle" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/FirstNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="First name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress"
+        android:hint="Enter First Name"
+        app:layout_constraintBottom_toTopOf="@+id/PostalAdressET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,14 +84,14 @@ tools:context=".MainActivity">
         app:layout_constraintVertical_bias="0.797" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/LastNameET"
+        android:hint="Enter Last Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Last name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/FirstNameET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@ tools:context=".MainActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneET"
         app:layout_constraintVertical_bias="0.295">
 
         <TextView
@@ -139,6 +139,5 @@ tools:context=".MainActivity">
             android:textSize="30sp" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

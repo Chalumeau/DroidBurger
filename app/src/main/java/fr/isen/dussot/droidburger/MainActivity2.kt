@@ -1,28 +1,34 @@
 package fr.isen.dussot.droidburger
 
-import android.app.Activity
+import android.app.TimePickerDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
-import java.util.ArrayList
-import android.app.TimePickerDialog
-import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
-import android.widget.EditText
-import android.widget.Toast
+import android.content.SharedPreferences
 
 
 
 
 
-internal class AndroidSpinnerExampleActivity : Activity(),
+
+
+
+class MainActivity2 : AppCompatActivity(),
     OnItemSelectedListener {
-    public override fun onCreate(savedInstanceState: Bundle?) {
+
+    lateinit var sharedPreferences: SharedPreferences
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
 
         val mPickTimeBtn = findViewById<Button>(R.id.pickTimeBtn)
@@ -43,34 +49,34 @@ internal class AndroidSpinnerExampleActivity : Activity(),
                 true
             ).show()
         }
-//        // Récupération des réponses
-//        val nbrecup1 = findViewById<View>(R.id.editTextPhone) as EditText
-//        val nbrecup2 = findViewById<View>(R.id.editTextTextPostalAddress) as EditText
-//        val nbrecup3 = findViewById<View>(R.id.editTextTextPersonName) as EditText
-//
-//        val nbrecup4 = findViewById<View>(R.id.editTextTextPersonName2) as EditText
-//        //val nbrecup5 = findViewById<View>(R.id.spinner) as Spinner
-//        val nbrecup6 = findViewById<View>(R.id.pickTimeBtn) as Button
-//
-//
-//        val recup1: String
-//        val recup2: String
-//        val recup3: String
-//        val recup4: String
-//        //val recup5: String
-//        val recup6: String
-//
-//        recup1 = nbrecup1.text.toString()
-//        recup2 = nbrecup2.text.toString()
-//        recup3 = nbrecup3.text.toString()
-//        recup4 = nbrecup4.text.toString()
-//        // recup5 = nbrecup5.text.toString()
-//        recup6 = nbrecup6.text.toString()
-//
-//        if (recup1.matches("") || recup2.matches("") || recup3.matches("") || recup4.matches("") || recup6.matches("")) {
-//            Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show()
-//            return
-//        }
+        // Récupération des réponses
+        val nbrecup1 = findViewById<View>(R.id.PhoneET) as EditText
+        val nbrecup2 = findViewById<View>(R.id.PostalAdressET) as EditText
+        val nbrecup3 = findViewById<View>(R.id.FirstNameET) as EditText
+
+        val nbrecup4 = findViewById<View>(R.id.LastNameET) as EditText
+        val nbrecup5 = findViewById<View>(R.id.spinner) as Spinner
+        val nbrecup6 = findViewById<View>(R.id.pickTimeBtn) as Button
+
+
+        val recup1: String
+        val recup2: String
+        val recup3: String
+        val recup4: String
+        val recup5: String
+        val recup6: String
+
+        recup1 = nbrecup1.text.toString()
+        recup2 = nbrecup2.text.toString()
+        recup3 = nbrecup3.text.toString()
+        recup4 = nbrecup4.text.toString()
+        recup5 = nbrecup5.textAlignment.toString()
+        recup6 = nbrecup6.text.toString()
+
+        if (recup1 == "" || recup2 == "" || recup3 == "" || recup4 == "" || recup5 == "" || recup6 == "") {
+            Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         // Spinner element
         val spinner = findViewById<View>(R.id.spinner) as Spinner
@@ -94,6 +100,19 @@ internal class AndroidSpinnerExampleActivity : Activity(),
 
         // attaching data adapter to spinner
         spinner.adapter = dataAdapter
+
+
+        sharedPreferences = getSharedPreferences("Données utilisateur", Context.MODE_PRIVATE)
+
+        val intent = Intent(this, PrefActivity::class.java)
+        startActivity(intent)
+        finish()
+
+
+
+
+
+
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
@@ -107,6 +126,6 @@ internal class AndroidSpinnerExampleActivity : Activity(),
 
 
     override fun onNothingSelected(arg0: AdapterView<*>?) {
-        // TODO Auto-generated method stub
+
     }
 }
